@@ -8,28 +8,29 @@ try {
 
 //２．データ登録SQL作成
 $stmt = $pdo->prepare("SELECT * FROM gs_bm_table");
+//$stmt = $pdo->prepare("SELECT book_url FROM gs_bm_table");
 $status = $stmt->execute();
 
-//３．データ表示
-$view="";
-if($status==false){
-  //execute（SQL実行時にエラーがある場合）
-  $error = $stmt->errorInfo();
-  exit("ErrorQuery:".$error[2]);
-
-}else{
-  //Selectデータの数だけ自動でループしてくれる
-  while( $result = $stmt->fetch(PDO::FETCH_ASSOC)){
-//    $view .= '<p>';
-//    $view .= $result["id"];
-//    $view .= $result["book_name"];
-    $view .= $result["book_url"];
-//    $view .= $result["book_text"];
-//    $view .= $result["book_date"];
-//    $view .= '</p>';
-  }
-
-}
+////３．データ表示
+//$view="";
+//if($status==false){
+//  //execute（SQL実行時にエラーがある場合）
+//  $error = $stmt->errorInfo();
+//  exit("ErrorQuery:".$error[2]);
+//
+//}else{
+//  //Selectデータの数だけ自動でループしてくれる
+//  while( $result = $stmt->fetch(PDO::FETCH_ASSOC)){
+////    $view .= '<p>';
+////    $view .= $result["id"];
+////    $view .= $result["book_name"];
+//    $view .= $result["book_url"];
+////    $view .= $result["book_text"];
+////    $view .= $result["book_date"];
+////    $view .= '</p>';
+//  }
+//
+//}
 ?>
 
 <!DOCTYPE html>
@@ -46,25 +47,56 @@ if($status==false){
     </style>
 
 </head>
-
+<body>
+    
 <!-- Main[End] -->
 <!--本-->
-<? var_dump($view); ?>
-<? var_dump(count($view)); ?>
+<?php
+//３．データ表示
+$view="";
+if($status==false){
+  //execute（SQL実行時にエラーがある場合）
+  $error = $stmt->errorInfo();
+  exit("ErrorQuery:".$error[2]);
+
+}else{
+  //Selectデータの数だけ自動でループしてくれる
+  while( $result = $stmt->fetch(PDO::FETCH_ASSOC)){
+//    $view .= '<p>';
+//    $view .= $result["id"];
+//    $view .= $result["book_name"];
+//    $view .= $result["book_url"];
+//    $view .= $result["book_text"];
+//    $view .= $result["book_date"];
+//    $view .= '</p>';
+      $get_data[]=$result["book_url"];
+      
+  }
+
+}   
+//    echo($get_data[1]);
+//    $test = $get_data[1];
+?> 
+
 <div id="magazine">
-    <div><img src=<? $view[1] ?> alt=""></div>
+
+<!--PHPでdivを作れる？調べる！！！-->
+
+    <div><img src=<? echo($get_data[1]); ?> alt=""></div>
     <div>page 2</div>
-    <div><img src="https://images-na.ssl-images-amazon.com/images/I/41f6SJzdJgL._SX311_BO1,204,203,200_.jpg" alt=""></div>
+    <div><img src=<? echo($get_data[2]); ?> alt=""></div>
     <div>page 4</div>
-    <div><img src="https://images-na.ssl-images-amazon.com/images/I/41aXtS8PLML._SX347_BO1,204,203,200_.jpg" alt=""></div>
+    <div><img src=<? echo($get_data[3]); ?> alt=""></div>
+    <div>pageb5</div>
+    <div><img src=<? echo($get_data[4]); ?> alt=""></div>
     <div></div>
-    <div><img src="https://images-na.ssl-images-amazon.com/images/I/51e6mV1O20L._SX346_BO1,204,203,200_.jpg" alt=""></div>
+    <div><img src=<? echo($get_data[5]); ?> alt=""></div>
     <div></div>
-    <div><img src="https://images-na.ssl-images-amazon.com/images/I/51%2BzmxiQfmL._SX346_BO1,204,203,200_.jpg" alt=""></div>
-    <div></div>
-    <div><img src="https://images-na.ssl-images-amazon.com/images/I/51eOOVlZgqL._SX344_BO1,204,203,200_.jpg" alt=""></div>
+    <div><img src=<? echo($get_data[6]); ?> alt=""></div>
+
 </div>
-  
+ 
+
 
   <script src="js/jquery-2.1.3.min.js"></script>
   <script src="js/turn.min.js"></script>
