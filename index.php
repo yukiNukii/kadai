@@ -9,7 +9,17 @@
   <script src="js/jquery-2.1.3.min.js"></script>
 </head>
 <body>
-
+    <form method="post" action="insert.php">
+  <div class="jumbotron">
+   <fieldset>
+    <legend>フリーアンケート</legend>
+     <label>書籍名：<input type="text" name="book_name"></label><br>
+       <label>URL：<textarea name="book_url" rows="2" cols="100"></textarea></label><br>
+     <label>コメント<textArea name="book_text" rows="4" cols="100"></textArea></label><br>
+     <input type="submit" value="送信">
+    </fieldset>
+  </div>
+</form>
 <!-- Head[Start] -->
 <header>
   <nav class="navbar navbar-default">

@@ -49,6 +49,7 @@ if($status==false){
 
 <!-- Main[End] -->
 <!--本-->
+<? var_dump($view); ?>
 <? var_dump(count($view)); ?>
 <div id="magazine">
     <div><img src=<? $view[1] ?> alt=""></div>
