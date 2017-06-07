@@ -86,11 +86,16 @@ if($status==false){
 //    echo '<img src="https://images-fe.ssl-images-amazon.com/images/I/51d892EMefL.jpg">';
 // echo '</div>';
 ?>
+
+echo()
 <?php
+ for($i=1; $i<=count($get_data); $i++){
   echo '<div>';
-    echo '<img src="https://images-fe.ssl-images-amazon.com/images/I/51d892EMefL.jpg">';
+    echo '<img src="' .$get_data[$i]. '"alt"">';
  echo '</div>';
+}
 ?>
+<!--
     <div><img src=<? echo($get_data[1]); ?> alt=""></div>
     <div>page 2</div>
     <div><img src=<? echo($get_data[2]); ?> alt=""></div>
@@ -102,6 +107,7 @@ if($status==false){
     <div><img src=<? echo($get_data[5]); ?> alt=""></div>
     <div></div>
     <div><img src=<? echo($get_data[6]); ?> alt=""></div>
+-->
 
 </div>
  
