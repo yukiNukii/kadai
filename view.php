@@ -87,12 +87,15 @@ if($status==false){
 // echo '</div>';
 ?>
 
-echo()
+
 <?php
  for($i=1; $i<=count($get_data); $i++){
-  echo '<div>';
+ echo'<div>';//右側のページ
+ echo'</div>';
+ echo '<div>';//左側のページ
     echo '<img src="' .$get_data[$i]. '"alt"">';
  echo '</div>';
+
 }
 ?>
 <!--
