@@ -81,7 +81,16 @@ if($status==false){
 <div id="magazine">
 
 <!--PHPでdivを作れる？調べる！！！-->
-
+<?php
+//  echo '<div>';
+//    echo '<img src="https://images-fe.ssl-images-amazon.com/images/I/51d892EMefL.jpg">';
+// echo '</div>';
+?>
+<?php
+  echo '<div>';
+    echo '<img src="https://images-fe.ssl-images-amazon.com/images/I/51d892EMefL.jpg">';
+ echo '</div>';
+?>
     <div><img src=<? echo($get_data[1]); ?> alt=""></div>
     <div>page 2</div>
     <div><img src=<? echo($get_data[2]); ?> alt=""></div>
