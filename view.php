@@ -11,26 +11,6 @@ $stmt = $pdo->prepare("SELECT * FROM gs_bm_table");
 //$stmt = $pdo->prepare("SELECT book_url FROM gs_bm_table");
 $status = $stmt->execute();
 
-////３．データ表示
-//$view="";
-//if($status==false){
-//  //execute（SQL実行時にエラーがある場合）
-//  $error = $stmt->errorInfo();
-//  exit("ErrorQuery:".$error[2]);
-//
-//}else{
-//  //Selectデータの数だけ自動でループしてくれる
-//  while( $result = $stmt->fetch(PDO::FETCH_ASSOC)){
-////    $view .= '<p>';
-////    $view .= $result["id"];
-////    $view .= $result["book_name"];
-//    $view .= $result["book_url"];
-////    $view .= $result["book_text"];
-////    $view .= $result["book_date"];
-////    $view .= '</p>';
-//  }
-//
-//}
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +20,7 @@ $status = $stmt->execute();
     <title>Document</title>
     <style>
         img{
-            height:996;
+            height:900;
             width:100%;
         }
     
@@ -69,8 +49,10 @@ if($status==false){
 //    $view .= $result["book_text"];
 //    $view .= $result["book_date"];
 //    $view .= '</p>';
-      $get_data[]=$result["book_url"];
-      
+      $get_book_url[]=$result["book_url"];
+      $get_book_name[]=$result["book_name"];
+      $get_book_text[]=$result["book_text"];
+      $get_book_date[]=$result["book_date"];
   }
 
 }   
@@ -81,35 +63,33 @@ if($status==false){
 <div id="magazine">
 
 <!--PHPでdivを作れる？調べる！！！-->
-<?php
-//  echo '<div>';
-//    echo '<img src="https://images-fe.ssl-images-amazon.com/images/I/51d892EMefL.jpg">';
-// echo '</div>';
-?>
-
 
 <?php
- for($i=1; $i<=count($get_data); $i++){
- echo'<div>';//右側のページ
- echo'</div>';
- echo '<div>';//左側のページ
-    echo '<img src="' .$get_data[$i]. '"alt"">';
+ for($i=1; $i<=count($get_book_name); $i++){
+ 
+//echo'<div>';//右側のページ
+//     
+//
+//echo'</div>';
+
+ echo '<div>';//ページ
+    echo '<img src="' .$get_book_url[$i]. '"alt="">';
  echo '</div>';
 
 }
 ?>
 <!--
-    <div><img src=<? echo($get_data[1]); ?> alt=""></div>
+    <div><img src=<? echo($get_book_url[1]); ?> alt=""></div>
     <div>page 2</div>
-    <div><img src=<? echo($get_data[2]); ?> alt=""></div>
+    <div><img src=<? echo($get_book_url[2]); ?> alt=""></div>
     <div>page 4</div>
-    <div><img src=<? echo($get_data[3]); ?> alt=""></div>
+    <div><img src=<? echo($get_book_url[3]); ?> alt=""></div>
     <div>pageb5</div>
-    <div><img src=<? echo($get_data[4]); ?> alt=""></div>
+    <div><img src=<? echo($get_book_url[4]); ?> alt=""></div>
     <div></div>
-    <div><img src=<? echo($get_data[5]); ?> alt=""></div>
+    <div><img src=<? echo($get_book_url[5]); ?> alt=""></div>
     <div></div>
-    <div><img src=<? echo($get_data[6]); ?> alt=""></div>
+    <div><img src=<? echo($get_book_url[6]); ?> alt=""></div>
 -->
 
 </div>
@@ -121,8 +101,8 @@ if($status==false){
 <script type="text/javascript">
 $(function(){
     $("#magazine").turn({
-        width: 996,
-        height: 646,
+        width: 950,
+        height: 685,
 //        autoCenter: true
     });
 });

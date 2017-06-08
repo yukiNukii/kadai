@@ -20,13 +20,17 @@ if($status==false){
 }else{
   //Selectデータの数だけ自動でループしてくれる
   while( $result = $stmt->fetch(PDO::FETCH_ASSOC)){
-    $view .= '<p>';
-    $view .= $result["id"];
-    $view .= $result["book_name"];
-    $view .= $result["book_url"];
-    $view .= $result["book_text"];
-    $view .= $result["book_date"];
-    $view .= '</p>';
+//    $view .= '<p>';
+//    $view .= $result["id"];
+//    $view .= $result["book_name"];
+//    $view .= $result["book_url"];
+//    $view .= $result["book_text"];
+//    $view .= $result["book_date"];
+    $id[] = $result["id"];
+    $name[] = $result["book_name"];
+    $url[] = $result["book_url"];
+    $text[] = $result["book_text"];
+    $date[] = $result["book_date"];
   }
 
 }
@@ -42,7 +46,21 @@ if($status==false){
 <title>BOOK一覧表示</title>
 <link rel="stylesheet" href="css/range.css">
 <link href="css/bootstrap.min.css" rel="stylesheet">
-<style>div{padding: 10px;font-size:16px;}</style>
+<style>
+    div{padding: 10px;font-size:16px;}
+    #id{
+        width:100px;
+    }
+    #name{
+        width:300px;
+    }
+    #kansou{
+        width:700px;
+    }
+    #date{
+        width:250px;
+    }
+</style>
 </head>
 <body id="main">
 <!-- Head[Start] -->
@@ -58,10 +76,30 @@ if($status==false){
 </header>
 <!-- Head[End] -->
 
+<table frame="border" rules="all">
+    <tr>
+        <td id = "id">ID</td>
+        <td id ="name">書籍名</td>
+        <td id ="kansou">感想</td>
+        <td id ="date">日付</td>
+    </tr>
+
 <!-- Main[Start] -->
-<div>
-    <div class="container jumbotron"><?=$view?></div>
-</div>
+<?php
+    for($i=0; $i<count($id); $i++){
+//<div>
+?>
+<tr>
+    <td><? echo $id[$i]; ?></td>
+    <td><? echo $name[$i]; ?></td>
+    <td><? echo $text[$i]; ?></td>
+    <td><? echo $date[$i]; ?></td>
+
+</tr>
+<?
+};
+?>
+</table>
 <!-- Main[End] -->
 
 </body>

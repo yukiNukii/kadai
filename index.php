@@ -12,10 +12,12 @@
     <form method="post" action="insert.php">
   <div class="jumbotron">
    <fieldset>
-    <legend>フリーアンケート</legend>
-     <label>書籍名：<input type="text" name="book_name"></label><br>
-       <label>URL：<textarea name="book_url" rows="2" cols="100"></textarea></label><br>
-     <label>コメント<textArea name="book_text" rows="4" cols="100"></textArea></label><br>
+    <legend>本の登録</legend>
+    <table>
+     <tr><th>書籍名：</th><td><input type="text" name="book_name"></td></tr>
+    <tr><th>URL：</th><td><textarea name="book_url" rows="2" cols="100"></textArea></td></tr>
+     <tr><th>コメント：</th><td><textArea name="book_text" rows="4" cols="100"></textArea></td></tr>
+     </table>
      <input type="submit" value="送信">
     </fieldset>
   </div>
