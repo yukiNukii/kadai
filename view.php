@@ -23,7 +23,12 @@ $status = $stmt->execute();
             height:100%;
             width:100%;
         }
-    
+        #mytext{
+            position:absolute;
+        }
+        #myimg{
+            position:relative;
+        }
     </style>
 
 </head>
@@ -69,8 +74,11 @@ if($status==false){
  
 echo'<div>';//右側のページ
 ?>
-<img src="img/paper.jpeg" alt="">
-<?php     
+<img src="img/paper.jpeg" alt="" id="myimg">
+<?php
+echo '<p id="mytext">';
+     echo $get_book_text[$i];
+echo '</p>';
 echo'</div>';
 
  echo '<div>';//ページ
