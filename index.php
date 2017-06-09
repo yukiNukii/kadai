@@ -9,10 +9,13 @@
   <script src="js/jquery-2.1.3.min.js"></script>
 </head>
 <body>
+   <header>
+       <h1>本の登録</h1>
+   </header>
     <form method="post" action="insert.php">
   <div class="jumbotron">
    <fieldset>
-    <legend>本の登録</legend>
+<!--    <legend>本の登録</legend>-->
     <table>
      <tr><th>書籍名：</th><td><input type="text" name="book_name"></td></tr>
     <tr><th>URL：</th><td><textarea name="book_url" rows="2" cols="100"></textArea></td></tr>

@@ -88,8 +88,13 @@ if($status==false){
 <?php
     for($i=0; $i<count($id); $i++){
 //<div>
+    if($i % 2 == 0){
+        $bgcolor="#F4ADB0";
+    }else{
+        $bgcolor="#FFFFFF";
+    }
 ?>
-<tr>
+<tr bgcolor = "<?=$bgcolor?>">
     <td><? echo $id[$i]; ?></td>
     <td><? echo $name[$i]; ?></td>
     <td><? echo $text[$i]; ?></td>
