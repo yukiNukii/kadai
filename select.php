@@ -96,10 +96,9 @@ if($status==false){
 ?>
 <tr bgcolor = "<?=$bgcolor?>">
     <td><? echo $id[$i]; ?></td>
-    <td><? echo $name[$i]; ?></td>
+    <td><a href= "<?=$url[$i];?>"><? echo $name[$i]; ?></a></td>
     <td><? echo $text[$i]; ?></td>
     <td><? echo $date[$i]; ?></td>
-
 </tr>
 <?
 };

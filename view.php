@@ -20,7 +20,7 @@ $status = $stmt->execute();
     <title>Document</title>
     <style>
         img{
-            height:900;
+            height:100%;
             width:100%;
         }
     
@@ -67,10 +67,11 @@ if($status==false){
 <?php
  for($i=1; $i<=count($get_book_name); $i++){
  
-//echo'<div>';//右側のページ
-//     
-//
-//echo'</div>';
+echo'<div>';//右側のページ
+?>
+<img src="img/paper.jpeg" alt="">
+<?php     
+echo'</div>';
 
  echo '<div>';//ページ
     echo '<img src="' .$get_book_url[$i]. '"alt="">';
