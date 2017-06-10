@@ -19,16 +19,23 @@ $status = $stmt->execute();
     <meta charset="UTF-8">
     <title>Document</title>
     <style>
+/*        div{
+          background-color:white;
+        }*/
+        .bgi_brown {
+          background-image: url("img/paper.jpeg");
+        }
+
         img{
             height:100%;
             width:100%;
         }
-        #mytext{
+/*        #mytext{
             position:absolute;
         }
         #myimg{
             position:relative;
-        }
+        }*/
     </style>
 
 </head>
@@ -71,13 +78,16 @@ if($status==false){
 
 <?php
  for($i=1; $i<=count($get_book_name); $i++){
- 
-echo'<div>';//右側のページ
+
+echo'<div class="bgi_brown">';//右側のページ
 ?>
-<img src="img/paper.jpeg" alt="" id="myimg">
+<!-- <img src="img/paper.jpeg" alt="" id="myimg"> -->
 <?php
+$k = $i-1;
 echo '<p id="mytext">';
-     echo $get_book_text[$i];
+     echo $get_book_name[$k];
+     echo $get_book_text[$k];
+     echo $get_book_date[$k];
 echo '</p>';
 echo'</div>';
 
