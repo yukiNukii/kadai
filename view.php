@@ -82,13 +82,27 @@ if($status==false){
 echo'<div class="bgi_brown">';//右側のページ
 ?>
 <!-- <img src="img/paper.jpeg" alt="" id="myimg"> -->
+<table>
+<tr>
 <?php
 $k = $i-1;
-echo '<p id="mytext">';
+// echo '<p id="mytext">';
      echo $get_book_name[$k];
+?>
+</tr>
+<tr>
+  <?php
      echo $get_book_text[$k];
+  ?>
+</tr>
+<tr>
+  <?php
      echo $get_book_date[$k];
-echo '</p>';
+  ?>
+</tr>
+// echo '</p>';
+</table>
+<?php
 echo'</div>';
 
  echo '<div>';//ページ
