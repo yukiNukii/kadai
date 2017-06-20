@@ -18,7 +18,7 @@
 <!--    <legend>本の登録</legend>-->
     <table>
      <tr><th>書籍名：</th><td><input type="text" name="book_name"></td></tr>
-    <tr><th>URL：</th><td><textarea name="book_url" rows="2" cols="100"></textArea></td></tr>
+    <tr><th>URL：</th><td><textArea name="book_url" rows="2" cols="100"></textArea></td></tr>
      <tr><th>コメント：</th><td><textArea name="book_text" rows="4" cols="100"></textArea></td></tr>
      </table>
      <input type="submit" value="送信">

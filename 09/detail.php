@@ -46,7 +46,7 @@ if($status==false){
 <!-- Head[End] -->
 
 <!-- Main[Start] -->
-<form method="post" action="bm_update.php">
+<form method="post" action="update.php">
  <input type="hidden" name ="id" value="<?=$id?>">
   <div class="jumbotron">
    <fieldset>
