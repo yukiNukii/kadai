@@ -7,6 +7,7 @@
   <style>div{padding: 10px;font-size:16px;}</style>
   <script src="https://github.com/blasten/turn.js.git"></script>
   <script src="js/jquery-2.1.3.min.js"></script>
+  <script src="./ckeditor/ckeditor.js"></script>
 </head>
 <body>
    <header>
@@ -19,7 +20,13 @@
     <table>
      <tr><th>書籍名：</th><td><input type="text" name="book_name"></td></tr>
     <tr><th>URL：</th><td><textArea name="book_url" rows="2" cols="100"></textArea></td></tr>
-     <tr><th>コメント：</th><td><textArea name="book_text" rows="4" cols="100"></textArea></td></tr>
+<!--     <tr><th>コメント：</th><td><textArea name="book_text" rows="4" cols="100"></textArea></td></tr>-->
+    <textArea name="book_text" id ="editor1" rows="10" cols="80">
+        this is my textarea to be replace with CKEditor.
+    </textArea>
+    <script>
+        CKEDITOR.replace('editor1');    
+    </script>
      </table>
      <input type="submit" value="送信">
     </fieldset>

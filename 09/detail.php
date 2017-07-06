@@ -57,7 +57,9 @@ if($status==false){
          <tr>
              <th>URL</th><td><input type="text" name="book_url" value="<?=$row["book_url"]?>"></td></tr>
          <tr>
-             <th></th><td><textArea name="book_text" rows="4" cols="40"><?=$row["book_text"]?></textArea></td></tr>
+             <th></th><td><textArea name="book_text" id="editor1" rows="4" cols="40">
+                 <?=$row["book_text"]?>
+            </textArea></td></tr>
          
     </table>
 
